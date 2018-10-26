@@ -10,7 +10,12 @@ Disassembling the binary it can be noted not many functions but malloc() and fre
 
 Utilizing a double-free vulnerability it is possible to corrupt a chunk and leak the libc address after freeing 8 times:
 
-Now we can use the view() function to leak the libc address on the chunk.
+Now we can use the view() function to leak a libc address from the chunk.
+
+After leaking, it is now time for the exploitation, it is possible to use the tcache poisoning attack:
+
+1 - Overwrite the first bytes from the tcache address to the __free_hook.
+2 - 
 
 It was provided a libc, so it can be calculated a magic gadget and the offset to __free_hook.
 
