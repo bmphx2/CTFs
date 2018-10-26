@@ -21,6 +21,8 @@ RCX:
 R8: 
 R9: 
 
-These registers are used to be executed by the syscall implemented on exec_syscall_obj().
+These registers are used to be executed by the syscall implemented on exec_syscall_obj(). As seen on the screenshot below:
+
+![exec_syscal_obj](exec_syscal_obj.png)
 
 
