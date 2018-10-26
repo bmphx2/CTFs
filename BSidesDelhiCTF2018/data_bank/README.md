@@ -8,3 +8,11 @@ So it is not possible to use gadgets without leaking due to the PIE and neither 
 
 Disassembling the binary it can be noted not many functions but malloc() and free() which indicates that could be a heap exploitation challenge.
 
+Utilizing a double-free vulnerability it is possible to corrupt a chunk and leak the libc address after freeing 8 times:
+
+Now we can use the view() function to leak the libc address on the chunk.
+
+It was provided a libc, so it can be calculated a magic gadget and the offset to __free_hook.
+
+root@mphx2-VM:/home/mphx2/ctfs/bsidesdelhi# readelf -s libc.so.6 | grep free_hook
+   221: 00000000003ed8e8     8 OBJECT  WEAK   DEFAULT   35 __free_hook@@GLIBC_2.2.5
