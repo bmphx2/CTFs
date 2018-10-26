@@ -10,15 +10,15 @@ So it is not possible to use gadgets without leaking due to the PIE and neither 
 
 Disassembling the binary it can be noted not many functions but malloc() and free() which indicates that could be a heap exploitation challenge.
 
-![functions](databank_2.png)
+![functions](databank_3.png)
 
 Utilizing a double-free vulnerability it is possible to corrupt a chunk and leak the libc address after freeing 8 times:
 
-![freeing](databank_3.png)
+![freeing](databank_5.png)
 
 Now we can use the view() function to leak a libc address from the chunk.
 
-![leaking](databank_4.png)
+![leaking](databank_6.png)
 
 After leaking, it is now time for the exploitation, it is possible to use the tcache poisoning attack and overwrite __free_hook for the magic gadget.
 
