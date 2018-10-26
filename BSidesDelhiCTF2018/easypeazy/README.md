@@ -9,8 +9,17 @@ The binary asks for 7 values for the registers in loop:
 
 ![exec](exec.png)
 
-These registers are used to be executed by the syscall implemented on exec_syscall_obj(). As seen on the screenshot below:
+These registers are used to be executed by the syscall implemented on exec_syscall_obj(). 
 
 ![exec_syscall_obj](exec_syscall_obj.png)
 
+However, only few syscalls are available, those are been filtered by the function validate_syscall_obj().
+Only, open(0x2)/read(0x0)/write(0x1)/close(0x3)/exit(0x3c).
+
+Now it is needed to set the values to open/read/write the flag from the file /home/easypeasy/flag, indicated on the challenge description.
+
+Since there is no PIE, we can write data on the file and re-utilize for our execution. The application is saving each data 
+from the registers on .data.
+
+To be able to write the full path it was used three registers RCX, R8 and R9 for this matter since it won't be utilized for the exploitation and it was utilized another space on BSS to save the data read from the flag file.
 
