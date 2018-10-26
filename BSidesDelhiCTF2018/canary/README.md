@@ -18,4 +18,4 @@ And then the binary asks for your name and use the vulnerable function scanf() f
 
 ![overflow](canary_4.png)
 
-However, it is possible to abuse th vulnerability overwriting the argv[0] with the flag's content address (0x6010a0) and on the exception message from the libc, the flag will be leaked.
+However, it is possible to abuse the vulnerability overwriting the argv[0] with the flag's content address (0x6010a0) and on the exception message from the libc, the flag will be leaked.
