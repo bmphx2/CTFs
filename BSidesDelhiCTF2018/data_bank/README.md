@@ -6,7 +6,7 @@ The binary is almost fully protected, only missing Fortify:
 
 ![checksec](databank_1.png)
 
-So it is not possible to use gadgets without leaking due to the PIE and neither overwrite the GOT entries because of the Full RelRo.
+So it is not possible to use gadgets without leaking due to the PIE and neither overwrite the GOT entries because of the full RelRo enabled.
 
 Disassembling the binary it can be noted not many functions but malloc() and free() which indicates that could be a heap exploitation challenge.
 
