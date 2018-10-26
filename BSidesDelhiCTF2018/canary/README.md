@@ -16,4 +16,6 @@ It starts opening the flag file (flag) and copying the contents to the static ad
 
 And then the binary asks for your name and use the vulnerable function scanf() for the users' input. There's not a simple way for using this stack-based buffer overflow for executing arbitrary functions since there is the canary protection and no obvious way to leak due the lack of functions on the application.
 
-However, it is possible to abuse th evulnerability overwriting the argv[0] with the flag's content address (0x6010a0) and on the exception message from the libc, the flag will be leaked.
+![overflow](canary_4.png)
+
+However, it is possible to abuse th vulnerability overwriting the argv[0] with the flag's content address (0x6010a0) and on the exception message from the libc, the flag will be leaked.
