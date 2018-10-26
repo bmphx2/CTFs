@@ -12,7 +12,7 @@ Disassembling the binary it can be noted not many functions but malloc() and fre
 
 ![functions](databank_3.png)
 
-Utilizing a double-free vulnerability it is possible to corrupt a chunk and leak the libc address after freeing 8 times:
+Utilizing a double-free vulnerability it is possible to corrupt a chunk and leak the libc address after freeing it 8 times.
 
 ![freeing](databank_5.png)
 
@@ -28,3 +28,7 @@ root@mphx2-VM:/home/mphx2/ctfs/bsidesdelhi# readelf -s libc.so.6 | grep free_hoo
    221: 00000000003ed8e8     8 OBJECT  WEAK   DEFAULT   35 __free_hook@@GLIBC_2.2.5
 
 Then use free() with the delete() function and the shell pops up.
+
+![shell](databank_9.png)
+
+
