@@ -20,18 +20,18 @@ Now we can use the view() function to leak a libc address from the chunk.
 
 ![leaking](databank_6.png)
 
-After leaking, it is now time for the exploitation, it is possible to use the tcache poisoning attack and overwrite __free_hook for the magic gadget.
+For the exploitation, it is possible to use the tcache poisoning attack and overwrite __free_hook() with the magic gadget.
 
 ![tcache](databank_8.png)
 
-It was provided a libc, so it can be calculated a magic gadget and the offset to __free_hook.
+It was provided a libc, so the magic gadget and the __free_hook() addresses can be calculated.
 
 ![magic_gadget](databank_7.png)
 
 root@mphx2-VM:/home/mphx2/ctfs/bsidesdelhi# readelf -s libc.so.6 | grep free_hook
    221: 00000000003ed8e8     8 OBJECT  WEAK   DEFAULT   35 __free_hook@@GLIBC_2.2.5
 
-Then use free() with the delete() function and the shell pops up.
+Ultimately use delete() function to trigger free(), the overwritten __free_hook() and the shell pops up.
 
 ![shell](databank_9.png)
 
