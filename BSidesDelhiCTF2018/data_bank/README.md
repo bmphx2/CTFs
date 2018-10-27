@@ -12,7 +12,7 @@ Disassembling the binary it can be noted not many functions but malloc() and fre
 
 ![functions](databank_3.png)
 
-Utilizing a double-free vulnerability it is possible to corrupt the unsortbin and leak a libc address after freeing a chunk 8 times and already poisons the tcache.
+Utilizing an UAF (use-after-free) vulnerability it is possible to leak a libc address after freeing a chunk 8 times and already poisons the tcache.
 
 ![freeing](databank_5.png)
 
