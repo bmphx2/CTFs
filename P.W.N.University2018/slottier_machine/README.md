@@ -25,9 +25,15 @@ Steps:
 
 1 - malloc(128)
 
+![chunk1](slottier_4.png)
+
 2 - free(128) -- tcache dup
 
+![chunk2](slottier_5.png)
+
 3 - Write on the chunk with the __free_hook address using the function [3] on the application.
+
+![chunk3](slottier_6.png)
 
 4 - malloc(128)
 
