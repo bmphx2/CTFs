@@ -18,9 +18,9 @@ puts_got     = 0x403fc8
 
 puts_plt     = 0x401030
 
-This will leak the puts@libc address and we can calculate any other function address on the library, in this case system().
+This will leak the puts@LIBC address and we can calculate any other function address based on that, in this case system().
 
-We need to re-run the application for being able to execute functions again. At first, I tried to use main()=0x401169 but system() could not being executed mostly because the stack/registers were already populated. In the end, I was able to re-run the scanf() using the function copy()=0x401146 from the binary and use system()+27 for executing /bin/sh.
+We need to re-run the application for being able to execute functions again. At first, I tried to use main()=0x401169 but system() could not being executed mostly because the stack/registers were already populated. In the end, It was possible to re-run the scanf() using the function copy()=0x401146 from the binary and use system()+27 for executing /bin/sh.
 
 So the first rop:
 
