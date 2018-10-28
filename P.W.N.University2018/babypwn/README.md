@@ -8,7 +8,7 @@ So there's no canary, no PIE, no Fortify and partil RelRo.
 
 ![proctections](baby_0.png)
 
-There's the function copy() that will allow to save data on the stack with no boundries and will cause a stack-based buffer overflow. Since there's no canary, it's possible to overwrite RIP and get $PC.
+There's the function copy() that will allow to save data on the stack with no boundries using scanf() and will cause a stack-based buffer overflow vulnerability. Since there's no canary, it's possible to overwrite RIP and get $PC.
 
 ![vuln](baby_1.png)
 
