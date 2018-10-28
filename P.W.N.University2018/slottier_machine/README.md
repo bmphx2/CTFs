@@ -26,7 +26,7 @@ Steps:
 
 ![chunk1](slottier_4.png)
 
-2 - free(128) -- tcache dup
+2 - free() -- tcache dup
 
 ![chunk2](slottier_5.png)
 
@@ -46,7 +46,7 @@ Steps:
 
 ![chunk6](slottier_8.png)
 
-7 - free(128) -- that will trigger the overwritten __free_hook = > magic gadget and shell!
+7 - free() -- that will trigger the overwritten __free_hook = > magic gadget and shell!
 
 ![chunk7](slottier_10.png)
 
