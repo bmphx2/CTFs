@@ -10,7 +10,7 @@ The application is pretty simple.
 
 ![Application](canary_2.png)
 
-It starts opening the flag file (flag) and copying the contents to the static address 0x6010a0.
+It starts opening the flag file (flag) and copying the contents to the static address **0x6010a0**.
 
 ![Debugging](canary_3.png)
 
