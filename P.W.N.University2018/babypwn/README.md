@@ -56,3 +56,5 @@ system       = system@LIBC+27
 
 And shell!
 
+![shell](baby_4.png)
+
