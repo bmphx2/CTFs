@@ -8,5 +8,14 @@ The application already leaks the system() address on the function.
 
 You have 7 coins for creating(malloc)/deleting(free) and editing using read().
 
+I utilized the tcache dup + poisoning technique and a magic_gadget from libc to exploit this locally.
+
+Steps:
+1 - malloc(128)
+
+2 - free(128) -- tcache_dup
+
+3 - 
+
 
 
