@@ -14,7 +14,9 @@ There's the function copy() that will allow to save data on the stack with no bo
 
 The challenge provided the libc but since ASLR is enabled, we need to leak an address from the there for being able to calculate base address and any other function from the library.
 
-In this case, it's possible to utilize the function puts() to leak any GOT entry, including puts itself. It is possible to use the utility "ropper" to dump useful gadgets from the binary.
+In this case, it's possible to utilize the function puts() to leak any GOT entry, including puts itself. 
+
+It is possible to use the utility "ropper" to dump useful gadgets from the binary since there's no PIE to random them.
 
 ![gadget](baby_2.png)
 
