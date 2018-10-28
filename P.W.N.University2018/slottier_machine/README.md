@@ -19,6 +19,7 @@ You have 7 coins for creating(malloc)/deleting(free) and editing using read().
 I utilized the tcache dup + poisoning technique and a magic_gadget from libc to exploit this locally.
 
 Steps:
+
 0 - Retrieved leaked system() addr and calculate libc base, __free_hook and magic gadget addresses.
 
 ![leak](slottier_3.png)
