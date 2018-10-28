@@ -6,7 +6,11 @@ ELF protections:
 
 So there's no canary, no PIE, no Fortify and partil RelRo.
 
+!(proctections)[baby_0.png]
+
 There's the function copy() that will allow to save data on the stack with no boundries and will cause a stack-based buffer overflow. Since there's no canary, it's possible to overwrite RIP and get $PC.
+
+!(vuln)[baby_1.png]
 
 The challenge provided the libc but since ASLR is enabled, we need to leak an address from the there for being able to calculate base address and any other function from the library.
 
