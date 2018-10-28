@@ -6,12 +6,13 @@ slottiermachine: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamic
 
 The binary protections:
 
-![protections](slottier_1.png)
+![protections](slottier_2.png)
 
 So we can't use binary gadgets without a leak (PIE) but we can overwrite GOT entries (partial RelRo).
 
-
 The application already leaks the system() address.
+
+![leak](slottier_1.png)
 
 You have 7 coins for creating(malloc)/deleting(free) and editing using read().
 
@@ -19,6 +20,8 @@ I utilized the tcache dup + poisoning technique and a magic_gadget from libc to 
 
 Steps:
 0 - Retrieved leaked system() addr and calculate libc base, __free_hook and magic gadget addresses.
+
+![leak](slottier_3.png)
 
 1 - malloc(128)
 
