@@ -44,9 +44,9 @@ Steps:
 
 6 - Write on the chunk with the magic gadget address, that will overwrite the __free_hook function with the magic gadget address.
 
-![chunk5](slottier_8.png)
+![chunk5](slottier_9.png)
 
-![chunk6](slottier_9.png)
+![chunk6](slottier_8.png)
 
 7 - free(128) -- that will trigger the overwritten __free_hook = > magic gadget and shell!
 
