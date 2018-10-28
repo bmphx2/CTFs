@@ -28,9 +28,9 @@ It was provided a libc, so the libc base address, magic gadget and the __free_ho
 
 ![magic_gadget](databank_7.png)
 
-root@mphx2-VM:/home/mphx2/ctfs/bsidesdelhi# readelf -s libc.so.6 | grep free_hook
+**root@mphx2-VM:/home/mphx2/ctfs/bsidesdelhi# readelf -s libc.so.6 | grep free_hook
 
-   221: 00000000003ed8e8     8 OBJECT  WEAK   DEFAULT   35 __free_hook@@GLIBC_2.2.5
+   221: 00000000003ed8e8     8 OBJECT  WEAK   DEFAULT   35 __free_hook@@GLIBC_2.2.5**
 
 Ultimately use delete() function to trigger free(), the overwritten __free_hook() and the shell pops up.
 
