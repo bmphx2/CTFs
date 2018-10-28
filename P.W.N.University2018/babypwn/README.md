@@ -4,7 +4,7 @@ babypwn: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked
 
 ELF protections:
 
-So there's no canary, no PIE, no Fortify and partil RelRo.
+So there's no canary, no PIE and no Fortify.
 
 ![proctections](baby_0.png)
 
