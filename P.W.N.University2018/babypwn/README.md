@@ -44,6 +44,8 @@ copy         = 0x401146
 
 The /bin/sh address is on the binary at 0x40302d but could be calculated from the libc too.
 
+![binsh](baby_3.png)
+
 And then the second rop:
 
 pop_rdi; ret = 0x401203
