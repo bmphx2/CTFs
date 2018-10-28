@@ -37,7 +37,11 @@ Steps:
 
 4 - malloc(128)
 
+![chunk4](slottier_7.png)
+
 5 - malloc(128) -- tcache poisoned
+
+![chunk5](slottier_8.png)
 
 6 - Write on the chunk with the magic gadget address, that will overwrite the __free_hook function with the magic gadget address.
 
