@@ -40,7 +40,7 @@ Steps:
 
 ![chunk4](slottier_7.png)
 
-6 - Write on the chunk with the magic gadget address, that will overwrite the __free_hook function with the magic gadget address.
+6 - Write the magic gadget address on the chunk that will overwrite the __free_hook function with the magic gadget address.
 
 ![chunk5](slottier_9.png)
 
