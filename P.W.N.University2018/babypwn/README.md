@@ -50,7 +50,7 @@ So the libc base address will be the leaked address (puts@LIBC) - **0x72a40**. S
 
 So the system() will be libc base address + **0x45380**.
 
-We need to re-run the application for being able to execute functions again. At first, I tried to use **main()=0x401169** but system() could not being executed mostly because the stack/registers were already populated. In the end, It was possible to re-run the scanf() using the function **copy()=0x401146** from the binary and use **system()+27** for executing /bin/sh.
+We need to re-run the application for being able to execute functions again. At first, I tried to use **main()=0x401169** but system() could not being executed mostly because the stack/registers were already populated -- this only happened on my libc. In the end, It was possible to re-run the scanf() using the function **copy()=0x401146** from the binary and use **system()+27** for executing /bin/sh.
 
 So the first rop:
 
@@ -78,3 +78,4 @@ And shell!
 
 ![shell](baby_4.png)
 
+ps:. It seems that it was only leaking remotely if main() is being executed after puts(puts_got) function, not sure why.
