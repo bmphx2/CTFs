@@ -2,6 +2,6 @@
 
 Some pwnables writeup done by me...
 
-## CTF Write-Ups ##
+## CTF write-ups ##
 
-- ![P.W.N.U University] (P.W.N.University2018/README.md)
+ - [2018-04-13-WPICTF](writeups/2018-04-13-WPICTF/README.md)
