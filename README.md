@@ -1,6 +1,6 @@
 # CTFs #
 
-Some pwnables challenges done by me...
+Some pwnable challenges done by me...
 
 ## CTF Write-Ups ##
 
