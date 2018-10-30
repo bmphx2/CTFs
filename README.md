@@ -1,8 +1,8 @@
-# CTFS #
+# CTFs #
 
-Some pwnables writeup done by me...
+Some pwnables challenges done by me...
 
-## CTF write-ups ##
+## CTF Write-Ups ##
 
  - [P.W.N. University 2018](P.W.N.University2018/)
  - [BSides Delhi 2018](BSidesDelhiCTF2018/)
