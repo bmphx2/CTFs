@@ -12,7 +12,7 @@ There's the function copy() that will allow to save data on the stack with no bo
 
 ![vuln](baby_1.png)
 
-The challenge provided the libc but since ASLR is enabled, we need to leak an address from the there for being able to calculate base address and any other function from the library.
+The challenge provided the libc but since ASLR is enabled, we need to leak an address from there for being able to calculate the base address and any other function from the library.
 
 In this case, it's possible to utilize the function puts() to leak any GOT entry, including puts itself. 
 
