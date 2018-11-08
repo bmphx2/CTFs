@@ -22,11 +22,11 @@ It is possible to use the utility "ropper" to dump useful gadgets from the binar
 
 So the ROP will be:
 
-**pop_rdi; ret = 0x401203**
+**pop_rdi; ret = 0x401203** >> This will pop the value from RDI and take the value from the top of the stack to replace it;
 
-**puts_got     = 0x403fc8**
+**puts_got     = 0x403fc8** >> The value that will be put on the RDI;
 
-**puts_plt     = 0x401030**
+**puts_plt     = 0x401030** >> Function to be executed;
 
 This will leak the puts@LIBC address and we can calculate the offset to any other function address based on that, in this case system().
 
