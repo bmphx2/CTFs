@@ -79,9 +79,7 @@ Reviewing:
 - Reconstruct the chunks' state and corrupt top chunk.
 - Calculate size necessary for overwriting free@GOT.
 - Create a chunk with this size.
-- Create another chunk (with overwrite free@GOT) with system() as data.
+- Create another chunk that will overwrite free@GOT, with system() as data.
 - Delete the chunk ID=2 (third) to trigger free => system.
-
-After done, use the delete person option on the third chunk (ID=2) to call the overwritten free and get a shell. 
 
 ![exploit](pwn2_final.png)
