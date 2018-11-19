@@ -32,7 +32,7 @@ At this point, it was deleted the second chunk (ID=1):
 
 ![chunks](pwn2_2.png)
 
-Now the first chunk (ID=0) is edited to overwrite all the null chars to the libc addresses. In this case the original first chunk was 120 bytes and now will be 129 bytes (one extra for \x0a) and filled with 129 bytes.
+Now the first chunk (ID=0) is edited to overwrite all the null chars to the libc addresses. In this case the original first chunk was 120 bytes and now will be 129 bytes (one extra for \x0a) and filled with 128 bytes.
 
 ![filling](pwn2_3.png)
 
