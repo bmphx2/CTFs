@@ -40,6 +40,23 @@ Printing the first chunk and leaking the libc address:
 
 ![libc](pwn2_4.png)
 
+It's important to restore the chunks structure as the same it was when deleted the second chunk. Editing the first chunk and setting the bytes as they were.
+
+**"A"*120+p32(0x0)+p32(0x91)**
+
+Now, it's used the same technique to leak the heap address on the third chunk, overflowing the second chunk.
+
+![heap](pwn2_5.png)
+
+At this point, we have all addresses needed for an attack. In this case, I utilized the "House of Force" technique, where the top chunk is corrupted to a negative number allowing to create a big chunk without calling mmap() that will overlap until the address you want to overwrite.
+
+While reconstructing the state from the chunks, it was set the top chunk as **0xffffffff**. It also includes the future argument for system() after free@GOT gets overwritten.
+
+"A"*120+p32(0x0)+p32(0x91)+"E"*140+p32(0x11)+***p32(bin_sh)****2+p32(0x0)+p32(0xa9)+"F"*160+p32(0x0)+***p32(0xffffffff)***
+
+
+
+
 
 Full write-up later.
 
