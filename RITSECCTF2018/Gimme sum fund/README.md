@@ -32,7 +32,7 @@ During the dynamic analysis, I did a breakpoint on the function at 0x492079 and 
 
 ![flag](pwn3_4.png)
 
-So we can overwrite the memory from our input to the flag and the binary will print the flag if there's no end char (/x00/xa0) during the printing.
+So we can overwrite the memory from our input to the flag and the binary will print the flag.
 
 Testing locally:
 
