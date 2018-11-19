@@ -48,7 +48,7 @@ Now, it's used the same technique to leak the heap address on the third chunk, o
 
 ![heap](pwn2_5.png)
 
-At this point, we have all addresses needed for an attack. In this case, I utilized the "House of Force" technique, where the top chunk is corrupted to a negative number allowing to create a big chunk without calling mmap() that will overlap until the address you want to overwrite.
+At this point, we have all addresses needed for an attack. In this case, I utilized the "House of Force" technique, where the top chunk is corrupted to a negative number allowing to create a big chunk without calling mmap() that will overlap until the address set to overwrite.
 
 While reconstructing the state from the chunks, it was set the top chunk as **0xffffffff**. It also includes the future argument for system() after free@GOT gets overwritten.
 
@@ -58,7 +58,7 @@ To calculate the size that will be necessary to reach the wanted function, in th
 
 size = free_got_addr - 0x30 (3 (chunks) x 0x10 (header size)) - top_chunk_addr
 
-Now it needs to be created a chunk with this size and the next chunk to be created will overwrite the address you wanted (free@GOT).
+Now it needs to be created a chunk with this size and then the next chunk created will overwrite the address defined (free@GOT).
 
 After done, only use the delete person option on the third chunk (ID=2) to call free and get a shell.
 
