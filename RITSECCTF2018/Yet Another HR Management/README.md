@@ -62,7 +62,7 @@ Now it needs to be created a chunk with this size and then the next chunk create
 
 To calculate system(), it's used the libc base (calculated from the leak) + 0x3a940. Offset defined by the provided libc file.
 
-# readelf -s libc.so.6 | grep system
+$ readelf -s libc.so.6 | grep system
 
    245: 00110840    68 FUNC    GLOBAL DEFAULT   13 svcerr_systemerr@@GLIBC_2.0
    
