@@ -40,5 +40,5 @@ Testing locally:
 
 On the remote host, it was needed to run multiple times:
 
-![remote](pwn3_6.png)
+![remote](pwn4_5.png)
 
