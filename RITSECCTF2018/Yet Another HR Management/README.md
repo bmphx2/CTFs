@@ -84,4 +84,4 @@ Reviewing:
 
 ![exploit](pwn2_final.png)
 
-Link to the exploit ![exploit.py](exploit.py)
+Link to the [exploit!](exploit.py)
