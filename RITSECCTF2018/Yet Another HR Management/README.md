@@ -42,7 +42,7 @@ Printing the first chunk and leaking the libc address:
 
 It's important to restore the chunks structure as the same it was when deleted the second chunk. Editing the first chunk and setting the bytes as they were.
 
-**"A"*120+p32(0x0)+p32(0x91)**
+"A"*120+p32(0x0)+p32(0x91)
 
 Now, it's used the same technique to leak the heap address on the third chunk, overflowing the second chunk.
 
