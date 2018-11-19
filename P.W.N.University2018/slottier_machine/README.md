@@ -50,5 +50,6 @@ Steps:
 
 ![chunk7](slottier_10.png)
 
+Link to the [exploit!](exploit_slottiermachine.py)
 
 
