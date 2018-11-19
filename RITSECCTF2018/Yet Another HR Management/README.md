@@ -58,8 +58,30 @@ To calculate the size that will be necessary to reach the wanted function, in th
 
 size = free_got_addr - 0x30 (3 (chunks) * 0x10 (header size)) - top_chunk_addr
 
-Now it needs to be created a chunk with this size and then the next chunk created will overwrite the address defined (free@GOT).
+Now it needs to be created a chunk with this size and then the next chunk created will overwrite the address defined (free@GOT) and it is possible to set any value, in this case, system@libc.
+
+To calculate system(), it's used the libc base (calculated from the leak) + 0x3a940. Offset defined by the provided libc file.
+
+# readelf -s libc.so.6 | grep system
+
+   245: 00110840    68 FUNC    GLOBAL DEFAULT   13 svcerr_systemerr@@GLIBC_2.0
+   
+   627: 0003a940    55 FUNC    GLOBAL DEFAULT   13 __libc_system@@GLIBC_PRIVATE
+   
+  1457: 0003a940    55 FUNC    WEAK   DEFAULT   13 system@@GLIBC_2.0
 
 After done, use the delete person option on the third chunk (ID=2) to call the overwritten free and get a shell.
+
+Reviewing:
+
+- Leak libc and heap addresses.
+- Calculate offset to system() and top chunk.
+- Reconstruct the chunks' state and corrupt top chunk.
+- Calculate size necessary for overwriting free@GOT.
+- Create a chunk with this size.
+- Create another chunk (with overwrite free@GOT) with system() as data.
+- Delete the chunk ID=2 (third) to trigger free => system.
+
+After done, use the delete person option on the third chunk (ID=2) to call the overwritten free and get a shell. 
 
 ![exploit](pwn2_final.png)
