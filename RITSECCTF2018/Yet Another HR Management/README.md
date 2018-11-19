@@ -60,6 +60,6 @@ size = free_got_addr - 0x30 (3 (chunks) x 0x10 (header size)) - top_chunk_addr
 
 Now it needs to be created a chunk with this size and then the next chunk created will overwrite the address defined (free@GOT).
 
-After done, only use the delete person option on the third chunk (ID=2) to call free and get a shell.
+After done, use the delete person option on the third chunk (ID=2) to call the overwritten free and get a shell.
 
 ![exploit](pwn2_final.png)
