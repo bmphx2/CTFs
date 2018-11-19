@@ -50,7 +50,7 @@ Now, it's used the same technique to leak the heap address on the third chunk, o
 
 At this point, we have all addresses needed for an attack. In this case, I utilized the "House of Force" technique, where the top chunk is corrupted to a negative number allowing to create a big chunk without calling mmap() that will overlap until the address set to overwrite.
 
-While reconstructing the state from the chunks, it was set the top chunk as **0xffffffff**. It also includes the future argument for system() after free@GOT gets overwritten.
+While reconstructing the state from the chunks using the first chunk with 457 bytes, it was set the top chunk as **0xffffffff**. And it also includes the future argument for system() after free@GOT gets overwritten.
 
 "A"*120+p32(0x0)+p32(0x91)+"E"*140+p32(0x11)+p32(bin_sh)*2+p32(0x0)+p32(0xa9)+"F"*160+p32(0x0)+p32(0xffffffff)
 
