@@ -22,7 +22,7 @@ gef➤
 
 The application is developed in GO, so the static analysis is a little bit tricky.
 
-The binary has five options create/edit/print/delete a person and exit. There are no boundries on the application, it is possible to overflow any chunk, edit deleted chunks, etc. 
+The binary has five options create/edit/print/delete a person and exit. There are no boundries on the application, it is possible to overflow any chunk (heap overflow), edit deleted chunks (UAF), etc. 
 
 ![app](pwn2_1.png)
 
