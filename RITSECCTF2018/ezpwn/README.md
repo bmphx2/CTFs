@@ -5,12 +5,19 @@ A x64 ELF file:
 Binary protections:
 
 gef➤  checksec
+
 [+] checksec for '/home/mphx2/ctfs/ritsec/ezpwn'
+
 Canary                        : No
+
 NX                            : Yes
+
 PIE                           : Yes
+
 Fortify                       : No
+
 RelRO                         : Partial
+
 gef➤ 
 
 This is a pretty simple application:
@@ -19,7 +26,7 @@ This is a pretty simple application:
 
 At the address 0x11c1, if RBP-0x8 is equal to 0x1, the application will open the flag file (flag.txt) and will print along with the decimal value from RBP-0x8 (address 0x122c).
 
-So using the function gets() -- 0x11bc, it is possible to cause an overflow and overwrite this position.
+So using the function gets() -- 0x11bc, it is possible to overwrite this position.
 
 ![ezpwn2](ezpwn_2.png)
 
