@@ -56,7 +56,7 @@ While reconstructing the state from the chunks using the first chunk with 457 by
 
 To calculate the size that will be necessary to reach the wanted function, in this case free@GOT:
 
-size = free_got_addr - 0x30 (3 (chunks) x 0x10 (header size)) - top_chunk_addr
+size = free_got_addr - 0x30 (3 (chunks) * 0x10 (header size)) - top_chunk_addr
 
 Now it needs to be created a chunk with this size and then the next chunk created will overwrite the address defined (free@GOT).
 
