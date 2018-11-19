@@ -26,9 +26,17 @@ The binary has five options create/edit/print/delete a person and exit. There ar
 
 For leaking the libc, it was created three chunks, deleted the second one and edited the first chunk with bytes overwriting until the libc addresses on the second chunk.
 
+At this point, it was deleted the second chunk (ID=1):
 
+![chunks](pwn2_3.png)
 
+Now the first chunk (ID=0) is edited to overwrite all the null chars to the libc addresses. In this case the original first chunk was 120 bytes and now will be 129 bytes (one extra for \x0a) and filled with 129 bytes.
 
+![filling](pwn2_4.png)
+
+Printing the first chunk and leaking the libc address:
+
+![libc](pwn2_5.png)
 
 
 Full write-up later.
