@@ -22,7 +22,13 @@ gef➤
 
 The application is developed in GO, so the static analysis is a little bit tricky.
 
-The binary has five options create/edit/print/delete a person and exit.
+The binary has five options create/edit/print/delete a person and exit. There are no boundries on the application, it is possible to overflow any chunk, edit deleted chunks, etc. 
+
+For leaking the libc, it was created three chunks, deleted the second one and edited the first chunk with bytes overwriting until the libc addresses on the second chunk.
+
+
+
+
 
 
 Full write-up later.
