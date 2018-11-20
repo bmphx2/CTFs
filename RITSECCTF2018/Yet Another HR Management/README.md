@@ -76,9 +76,9 @@ After done, use the delete person option on the third chunk (ID=2) to call the o
 
 Reviewing:
 
-- Leak libc and heap addresses.
+- UAF (use-after-free) to leak libc and heap addresses.
 - Calculate offset to system() and top chunk.
-- Reconstruct the chunks' state and corrupt top chunk.
+- Reconstruct the chunks' state and corrupt top chunk for the House of Force technique.
 - Calculate size necessary for overwriting free@GOT.
 - Create a chunk with this size.
 - Create another chunk that will overwrite free@GOT, with system() as data.
