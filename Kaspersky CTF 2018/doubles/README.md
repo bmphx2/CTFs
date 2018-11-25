@@ -42,7 +42,7 @@ And then the registers are zeroed, but $rax with the allocated memory+0x70 bytes
 
 So it will have the shellcode submitted in double (up to 0x6 times) and the $rip will be 0x70 bytes from this.
 
-It is necessary to reach the entire shellcode jumping -0x78 bytes from the execution (there is some thrash 0x909090909090c031) put by the execution on offset 0x70.
+It is necessary to reach the entire shellcode jumping -0x78 bytes from the execution, there are some opcode bytes on the offset 0x70 that will clear $rax (0x909090909090c031) along with some NOPs.
 
 There are opcode bytes that do the jump for short distances, for -0x78 bytes are *\xeb\x86*.
 
