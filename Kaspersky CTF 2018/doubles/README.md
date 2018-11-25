@@ -46,7 +46,7 @@ It is necessary to reach the entire shellcode jumping -0x78 bytes from the execu
 
 There are opcode bytes that do the jump for short distances, for -0x78 bytes are *\xeb\x86*.
 
-All registers were zeroed including $esp and $ebp ($rsp/$rbp) during the last block of execution. My tactic was to use $rip as reference for constructing since it was the only address available. The $rbx was not necessary.
+All registers were zeroed including $esp and $ebp ($rsp/$rbp) during the last block of execution. My tactic was to use $rip as reference for constructing since it was the only address available on the registers. 
 
 0x7ffff7ff6000:	lea    rdi,[rip+0x19]        # Copying the address from $rip+0x19 where it contains the /bin/sh%00
 
@@ -65,6 +65,8 @@ All registers were zeroed including $esp and $ebp ($rsp/$rbp) during the last bl
 0x7ffff7ff6017:	nop
 
 0x7ffff7ff6018:	syscall                       # syscall
+
+The $rbx is not necessary for the execution.
 
 And executing the exploit.
 
