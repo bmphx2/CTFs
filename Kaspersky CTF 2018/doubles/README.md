@@ -28,7 +28,7 @@ Here part of the disassembled binary:
 
 ![binary](doubles_3.png)
 
-The address of the allocated memory by mmap() is saved on $r14 to use during the execution. And then proceeding the execution, there is the first scanf() at 0x40081. This will read an unsigned integer from the user's input.
+The address of the allocated memory by mmap() is saved on $r14 to use during the execution. And then, there is the first scanf() at 0x40081. This will read an unsigned integer from the user's input.
 
 ![scanf](doubles_4.png)
 
