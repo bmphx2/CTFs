@@ -44,7 +44,7 @@ So it will have the shellcode submitted in double (up to 0x6 times) and the $rip
 
 It is necessary to reach the entire shellcode jumping -0x78 bytes from the execution (there is some thrash 0x909090909090c031) put by the execution on offset 0x70.
 
-There are opcode bytes that does the jump for short distances, for -0x78 bytes are *\xeb\x86*.
+There are opcode bytes that do the jump for short distances, for -0x78 bytes are *\xeb\x86*.
 
 All registers were zeroed including $esp and $ebp ($rsp/$rbp) during the last block of execution. My tactic was to use $rip as reference for constructing since it was the only address available. The $rbx was not necessary.
 
