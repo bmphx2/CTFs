@@ -32,11 +32,11 @@ The address of the allocated memory by mmap() is saved on $r14 to use during the
 
 ![scanf](doubles_4.png)
 
-This will determine how many double words you want to write on the allocated memory at the address 0x40085a, another scanf().
+This will determine how many double ints you want to write (up to 0x6 times) on the allocated memory at the address 0x40085a, another scanf().
 
 ![scanf](doubles_5.png)
 
-And then the registers are zeroed, but RAX with the allocated memory+0x70 bytes and it finally jumps there where it contains the last doubles from the input.
+And then the registers are zeroed, but $rax with the allocated memory+0x70 bytes and it finally jumps there where it contains the last double int from the input.
 
 ![exec](doubles_6.png)
 
