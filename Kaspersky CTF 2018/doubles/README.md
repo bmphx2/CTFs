@@ -24,7 +24,7 @@ The allocation is done randomly on memory, with 0x10000 bytes and with execution
 
 ![memory](doubles_2.png)
 
-Here part of the binary disassembled:
+Here part of the disassembled binary:
 
 ![binary](doubles_3.png)
 
