@@ -32,7 +32,7 @@ The address of the allocated memory by mmap() is saved on $r14 to use during the
 
 ![scanf](doubles_4.png)
 
-This will determine how many double ints you want to write (up to 0x6 times) on the allocated memory using the second scanf().
+This will determine how many doubles you want to write (up to 0x6 times) on the allocated memory using the second scanf().
 
 ![scanf](doubles_5.png)
 
