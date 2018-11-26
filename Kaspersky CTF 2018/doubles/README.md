@@ -20,7 +20,7 @@ However on the static analysis it is possible to determine that a new memory all
 
 ![memory](doubles_1.png)
 
-The allocation is done randomly on memory, with 0x10000 bytes and with execution permission.
+The allocation is done randomly on memory, with 0x1000 bytes and with execution permission.
 
 ![memory](doubles_2.png)
 
