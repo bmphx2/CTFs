@@ -1,6 +1,6 @@
 ## Pwnables Write-Ups ##
 
- - [ret2systems](ret2systems/battle_quest/)
+ - [ret2systems](ret2systems/)
  - [OTA University](OTA%20University/)
  - [CONFidence 2016](CONFidence%202016/)
  - [Kaspersky CTF 2018](Kaspersky%20CTF%202018/)
