@@ -1,4 +1,6 @@
 
+This challenge was given by [ret2.systems](https://wargames.ret2.systems/level/battle_quest). You would use their own system to analyze/debug and exploit, pretty awesome.
+
 The challenge is based on a RPG game where we have five heroes: Bard, Wizard, Rogue, Druid and a Dragon.
 
 Each hero has four actions in a turn:
@@ -472,3 +474,4 @@ That will overwrite the value 0x607bf8 (Bard's data) to 0x607b98 (Dragon's data)
 
 I hope you enjoyed the reading
 
+The exploit is a mess, but you can download it [here](https://github.com/bmphx2/CTFS/blob/master/ret2systems/battle_quest/exploit.py).
