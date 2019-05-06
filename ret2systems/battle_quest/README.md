@@ -475,3 +475,6 @@ That will overwrite the value 0x607bf8 (Bard's data) to 0x607b98 (Dragon's data)
 I hope you enjoyed the reading
 
 The exploit is a mess, but you can download it [here](https://github.com/bmphx2/CTFS/blob/master/ret2systems/battle_quest/exploit.py).
+
+I also uploaded the [source-code](https://github.com/bmphx2/CTFS/blob/master/ret2systems/battle_quest/source_code.cpp) from the binary, in case the challenge is no longer available.
+
