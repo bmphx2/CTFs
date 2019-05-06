@@ -366,7 +366,7 @@ While choosing the hero to be revived, the function does the input validation fr
 > 12.  }
 
         
-
+## Exploitation
   
 
 Here the second vulnerability.
@@ -404,12 +404,7 @@ Remember that we can't use special action on the Druid's revival turn. But since
     0x6b6e30: 0x00000000 0x00000000 0x00000000 0x00000000
     
     0x6b6e40: 0x00000000 0x00000000
-
-  
-
-## Exploitation
-
-  
+    
 
 That give us the **write > what > where exploitation** primitive.
 
