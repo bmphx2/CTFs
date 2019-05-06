@@ -2,7 +2,6 @@
 This challenge was given by [ret2.systems](https://wargames.ret2.systems/level/battle_quest). You would use their own system to analyze/debug and exploit, pretty awesome.
 
 The x64 binary has the following protections:
-The x64 binary has the following protections:
 
     wdb> checksec
     [*] '/bin/battle_quest'
@@ -12,6 +11,8 @@ The x64 binary has the following protections:
         NX:        NX Enabled
         ASLR:      Enabled
         PIE:       No PIE
+
+So, the binary itself is not randomized.
 
 The challenge is based on a RPG game where we have five heroes: Bard, Wizard, Rogue, Druid and a Dragon.
 
