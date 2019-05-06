@@ -1,8 +1,4 @@
-# CTFs #
-
-Some pwnable challenges done by me...
-
-## CTF Write-Ups ##
+## Pwnables Write-Ups ##
 
  - [ret2systems](ret2systems/battle_quest/)
  - [OTA University](OTA%20University/)
