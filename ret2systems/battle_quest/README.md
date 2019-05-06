@@ -1,6 +1,8 @@
 
 This challenge was given by [ret2.systems](https://wargames.ret2.systems/level/battle_quest). You would use their own system to analyze/debug and exploit, pretty awesome.
 
+## The Challenge
+
 The x64 binary has the following protections:
 
     wdb> checksec
