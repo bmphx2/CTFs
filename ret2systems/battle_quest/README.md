@@ -78,7 +78,7 @@ Each hero added to the fight has a pointer into the heap and at this address is 
     
     0x6b5c70: 0x00000000 0x00000000 0x00000000 0x00000000
     
-    0x6b5c80:  0x006b6d00 0x00000000 0x00000000 0x00000000
+    0x6b5c80:  **0x006b6d00** 0x00000000 0x00000000 0x00000000
     
     0x6b5c90: 0x00000000 0x00000000 0x00000000 0x00000000
     
@@ -471,8 +471,4 @@ That will overwrite the value 0x607bf8 (Bard's data) to 0x607b98 (Dragon's data)
   
 
 I hope you enjoyed the reading
-
-
-
-
 
